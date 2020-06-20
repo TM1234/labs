@@ -8,6 +8,11 @@ pipeline {
 				bat label: '', script: 'mvn compile'
             }
         }
+	    stage('Cloning Source Code'){
+		    steps{
+		    	git url: 'https://github.com/TM1234/samplejavaapp.git, credentialsId:"susmi1234";
+		    }
+	    }
         stage('codereview-pmd') {
 			steps {
                 echo 'codereview..'
