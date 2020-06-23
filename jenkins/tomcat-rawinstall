@@ -1,0 +1,83 @@
+On UBUNTU machine Install JAVA
+
+	sudo add-apt-repository ppa:openjdk-r/ppa
+	sudo apt-get update
+	sudo apt-get install -y openjdk-8-jdk
+
+Tomcat Installation and Configuration
+ 
+
+Go to www.google.com search for download tomcat,  you can download link 
+
+ 
+
+The current stable version is 8.5.54 download the tar.gz . Extract the tar.gz  and copy any where. Tomcat is ready.
+
+ 
+
+ 
+
+
+Copy link address as shown in above screenshot
+Login to UBUNTU Machine & below commands 
+NOTE: be root user to do all below tasks.  You may see the permission issues if not. 
+cd /tmp ; wget (paste the copied link here) , i.e it looks like below 
+cd /tmp ; wget https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.54/bin/apache-tomcat-8.5.54.tar.gz
+----------------------------------------------------------------------------------------------
+wget https://downloads.apache.org/tomcat/tomcat-10/v10.0.0-M6/bin/apache-tomcat-10.0.0-M6.tar.gz
+----------------------------------------------------------------------------------------------
+
+This will download the tomcat binary to UBUNTU machine under /tmp direcotry, and then we can extract the tar file 
+cd /tmp ; tar xvf apache-tomcat-8.5.54.tar.gz  -C /opt/
+-------------------------------------------------
+tar -C /opt -xvf apache-tomcat-10.0.0-M6.tar.gz
+-------------------------------------------------
+
+The above command will extract the tomcat binary to /opt/ directory 
+Now you can goto /opt/apache-tomcat-8.5.54/bin & run startup.sh to start tomcat server 
+cd /opt/apache-tomcat-8.5.54/bin
+./startup.sh
+Note: ensure that 8080 port is not occupied on your machine since tomcat by default uses 8080 port number. 
+We can access the tomcat once it is started using    http://IP:8080
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Setting UP Jenkins in TOMCAT Server: 
+We need to download the jenkins.war file from official Jenkins website 
+Goto link https://www.jenkins.io/download/
+Download the war file under LTS section
+ 
+
+On downloads page right click on Generic Java package(war) & copy link address 
+Login to UBUNTU machine follow as below in screen shot. 
+ 
+
+Ensure Jenkins war file successfully downloaded on to your machine. 
+
+Deploy Jenkins war file to tomcat Server:
+
+ 
+
+Restart Jenkins 
+
+ 
+
+This concludes deploying Jenkins to tomcat Server; we can access Jenkins from below URL 
+
+
+
+http://IP:8080/jenkins 
+
+ 
+
